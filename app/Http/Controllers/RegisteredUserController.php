@@ -47,5 +47,6 @@ class RegisteredUserController extends Controller
         ]);
 
         Auth::login($user);
+        return redirect('/')->with('success', 'Account created and logged in successfully.');
     }
 }

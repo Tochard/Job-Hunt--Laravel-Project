@@ -25,9 +25,25 @@
                 <a href="#">Salaries</a>
                 <a href="#">Companies</a>
             </div>
-            <div>
-                <a href="#">Post a Job</a>
-            </div>
+
+            @auth
+                <div class="space-x-4 flex items-center">
+                    <a href="/jobs/create">Post a Job</a>
+                    <form method="POST" action="/logout">
+                        @csrf
+                        @method('DELETE')
+                        <button class="px-4 py-2 bg-blue-600 rounded hover:bg-blue-700">Logout</button>
+                    </form>
+                </div>
+            @endauth
+
+
+            @guest
+                <div class="space-x-4">
+                    <a href="/register" class="px-4 py-2 border border-white/10 rounded hover:bg-white/5">Register</a>
+                    <a href="/login" class="px-4 py-2 bg-blue-600 rounded hover:bg-blue-700">Login</a>
+                </div>
+            @endguest
 
         </nav>
 

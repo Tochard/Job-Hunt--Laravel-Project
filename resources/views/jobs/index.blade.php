@@ -4,10 +4,14 @@
 
         <section class="text-center pt-6">
             <h1 class="font-bold text-4xl">Let's Find Your Next Job</h1>
-            <form action="" class="mt-6">
+            {{-- <form action="" class="mt-6">
                 <input type="text" placeholder="Search for jobs, companies, or keywords"
                     class="w-full bg-white/5 rounded-xl border-white/20 px-5 py-4 max-w-xl">
-            </form>
+            </form> --}}
+            <x-forms.form action="/search" class="mt-6">
+                <x-forms.input type="text" :label="false" name="q"
+                    placeholder="Search for jobs, companies, or keywords" />
+            </x-forms.form>
         </section>
 
 
